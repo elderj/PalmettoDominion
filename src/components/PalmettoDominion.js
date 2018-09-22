@@ -6,15 +6,8 @@ import logo from '../images/logo.png';
 
 const { Header, Content } = Layout;
 
-// const navBar = css`
-//   background: #fff;
-//   box-shadow: 0 2px 8px #ff0000;
-//   position: fixed;
-//   padding: 0;
-//   margin: 0;
-//   z-index: 10;
-// `;
 
+//TODO: Make Styles consistent
 const leftNavBar = css`
   display: flex;
   // background: #00ff00;
@@ -24,19 +17,10 @@ const leftNavBar = css`
   min-width: 300px;
 `;
 
-const rightNavBar = css`
-  display: flex;
-  background: #00ff00;
-  alight-items: left;
-  justify-content: flex-end;
-  height: 64px;
-  min-width: 100px;
-`;
-
 class PalmettoDominion extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layout style={{ height: '100vh', backgroundColor: '#FF7F50' }}>
         <Header
           style={{
             align: 'center',
@@ -62,7 +46,7 @@ class PalmettoDominion extends React.Component {
               Palmetto Dominion
             </span>
           </Col>
-          <Col className={leftNavBar} span={12}>
+          <Col span={12}>
             {' '}
             <Menu
               theme="dark"
@@ -70,14 +54,21 @@ class PalmettoDominion extends React.Component {
               defaultSelectedKeys={['2']}
               style={{ lineHeight: '64px' }}
             >
-              <Menu.Item key="1">nav 1</Menu.Item>
-              <Menu.Item key="2">nav 2</Menu.Item>
-              <Menu.Item key="3">nav 3</Menu.Item>
+              <Menu.Item key="1">Home</Menu.Item>
+              <Menu.Item key="2">Recipes</Menu.Item>
+              <Menu.Item key="3">🌶Pepper Glossary</Menu.Item>
+              <Menu.Item key="4">Contact</Menu.Item>
             </Menu>
           </Col>
         </Header>
         <Content>
-          <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
+          <div
+            style={{
+              background: 'padding: 24, minHeight: 280',
+              backgroundColor: '#F0F0F0',
+              height: '100',
+            }}
+          >
             <p>Content</p>
           </div>
         </Content>
