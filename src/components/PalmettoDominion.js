@@ -17,7 +17,6 @@ const navContentLeft = css`
   display: flex;
   alight-items: left;
   justify-content: flex-end;
-  height: 64px;
   min-width: 75px;
 `;
 
@@ -34,6 +33,7 @@ class PalmettoDominion extends React.Component {
               margin: 0,
               minWidth: '600px',
               padding: 0,
+              height: '66px',
             }}
           >
             <Col className={navContentLeft} span={1}>
