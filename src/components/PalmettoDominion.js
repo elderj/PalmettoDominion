@@ -13,30 +13,30 @@ import logo from '../images/logo.png';
 const { Header, Content } = Layout;
 
 //TODO: Make Styles consistent
-const leftNavBar = css`
+const navContentLeft = css`
   display: flex;
-  // background: #00ff00;
   alight-items: left;
   justify-content: flex-end;
   height: 64px;
-  min-width: 300px;
+  min-width: 75px;
 `;
 
 class PalmettoDominion extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <Layout style={{ height: '100vh', backgroundColor: '#FF7F50' }}>
+      <BrowserRouter basename={'/PalmettoDominion'}>
+        <Layout style={{ height: '100vh', backgroundColor: '#F0F0F0' }}>
           <Header
             style={{
               align: 'center',
+              backgroundColor: '#FFFFFF',
               boxShadow: '0 2px 8px #010101',
-              padding: 0,
               margin: 0,
               minWidth: '600px',
+              padding: 0,
             }}
           >
-            <Col className={leftNavBar} span={5}>
+            <Col className={navContentLeft} span={1}>
               <img
                 src={logo}
                 alt="Palmetto Dominion Hot Sauce Bottle"
@@ -48,15 +48,9 @@ class PalmettoDominion extends React.Component {
                   marginBottom: 12,
                 }}
               />
-
-              <span style={{ color: '#f1f1f1', fontSize: '21px' }}>
-                Palmetto Dominion
-              </span>
             </Col>
             <Col span={12}>
-              {' '}
               <Menu
-                theme="dark"
                 mode="horizontal"
                 defaultSelectedKeys={['1']}
                 style={{ lineHeight: '64px' }}
@@ -81,7 +75,7 @@ class PalmettoDominion extends React.Component {
             <div
               style={{
                 background: 'padding: 24, minHeight: 280',
-                backgroundColor: '#F0F0F0',
+                backgroundColor: '#FF7F50',
                 height: '100',
               }}
             >
@@ -91,6 +85,18 @@ class PalmettoDominion extends React.Component {
                 <Route path="/Glossary" component={Glossary} />
                 <Route path="/Contact" component={Contact} />
               </Switch>
+            </div>
+            <div>
+              <div className="Aligner">
+                <div className="Aligner-item">
+                  <h2>🌶 🌶 🌶 🌶 🌶</h2>
+                </div>
+              </div>
+              <div className="Aligner">
+                <div className="Aligner-item">
+                  <p>© 2018 Palmetto Dominion</p>
+                </div>
+              </div>
             </div>
           </Content>
         </Layout>

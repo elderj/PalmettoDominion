@@ -1,9 +1,9 @@
 import React from 'react';
 
-class Glossary extends React.Component {
-  render() {
-    return <p>Glossary</p>;
-  }
-}
+const Glossary = () => (
+  <div>
+    <p>Glossary</p>
+  </div>
+);
 
 export default Glossary;

@@ -1,0 +1,18 @@
+body {
+   background:coral !important;
+}
+
+#contentonpage {
+    margin-left: 80px !important;
+    margin-right: 100px !important;
+}
+
+@font-face {
+  font-family: actionj;
+  src: url("./actionj.ttf") format("opentype");
+}
+
+/* Doesn't support capital letters*/
+.font-actionj {
+    font-family: 'actionj';
+}
