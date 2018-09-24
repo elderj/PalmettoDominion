@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 class Contact extends React.Component {
   render() {
-    return <p>Contact</p>;
+    return (
+      <Fragment>
+        <br />
+        <div className="Aligner">
+          <div className="Aligner-item">
+            <h1 className="font-actionj">What's Up?</h1>
+          </div>
+        </div>
+      </Fragment>
+    );
   }
 }
 
