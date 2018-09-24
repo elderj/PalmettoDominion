@@ -4,9 +4,9 @@ import { Col, Layout, Menu, Row } from 'antd';
 import { css } from 'emotion';
 
 import HomePage from './HomePage';
-import Recipes from './Recipes';
-import Glossary from './Glossary';
-import Contact from './Contact';
+import RecipesPage from './RecipesPage';
+import GlossaryPage from './GlossaryPage';
+import ContactPage from './ContactPage';
 
 import logo from '../images/logo.png';
 
@@ -37,17 +37,19 @@ class PalmettoDominion extends React.Component {
             }}
           >
             <Col className={navContentLeft} span={1}>
-              <img
-                src={logo}
-                alt="Palmetto Dominion Hot Sauce Bottle"
-                style={{
-                  height: 48,
-                  marginTop: 12,
-                  marginLeft: 16,
-                  marginRight: 16,
-                  marginBottom: 12,
-                }}
-              />
+              <Link to="/">
+                <img
+                  src={logo}
+                  alt="Palmetto Dominion Hot Sauce Bottle"
+                  style={{
+                    height: 48,
+                    marginTop: 12,
+                    marginLeft: 16,
+                    marginRight: 16,
+                    marginBottom: 12,
+                  }}
+                />
+              </Link>
             </Col>
             <Col span={12}>
               <Menu
@@ -81,9 +83,9 @@ class PalmettoDominion extends React.Component {
             >
               <Switch>
                 <Route exact path="/" component={HomePage} />
-                <Route path="/Recipes" component={Recipes} />
-                <Route path="/Glossary" component={Glossary} />
-                <Route path="/Contact" component={Contact} />
+                <Route path="/Recipes" component={RecipesPage} />
+                <Route path="/Glossary" component={GlossaryPage} />
+                <Route path="/Contact" component={ContactPage} />
               </Switch>
             </div>
             <div>

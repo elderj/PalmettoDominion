@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const Recipes = () => (
+const RecipesPage = () => (
   <Fragment>
     <br />
     <div className="Aligner">
@@ -11,4 +11,4 @@ const Recipes = () => (
   </Fragment>
 );
 
-export default Recipes;
+export default RecipesPage;
