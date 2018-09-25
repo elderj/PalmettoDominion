@@ -1,0 +1,16 @@
+{
+  "dataSource": [
+    {
+      "key": "1",
+      "name": "Jalapeño",
+      "scientificName": "Capsicum annuum",
+      "scovilleUnits": 3500
+    },
+    {
+      "key": "2",
+      "name": "Habanero",
+      "scientificName": "Capsicum chinense",
+      "scovilleUnits": 35000
+    }
+  ]
+}

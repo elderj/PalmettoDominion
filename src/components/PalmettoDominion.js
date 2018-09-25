@@ -24,7 +24,7 @@ class PalmettoDominion extends React.Component {
   render() {
     return (
       <BrowserRouter basename={'/PalmettoDominion'}>
-        <Layout style={{ height: '100vh', backgroundColor: '#F0F0F0' }}>
+        <Layout style={{ height: '100vh', backgroundColor: '#fff' }}>
           <Header
             style={{
               align: 'center',

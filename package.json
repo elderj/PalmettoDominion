@@ -19,5 +19,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.7"
   }
 }

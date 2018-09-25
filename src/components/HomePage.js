@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+
 import logo from '../images/logo.png';
 
 import '../styles/aligner.css';
