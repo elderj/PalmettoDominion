@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import ScovilleScale from './ScovilleScale';
 
 class ContactPage extends React.Component {
   render() {
@@ -8,6 +9,7 @@ class ContactPage extends React.Component {
         <div className="Aligner">
           <div className="Aligner-item">
             <h1 className="font-actionj">What's Up?</h1>
+
           </div>
         </div>
       </Fragment>
