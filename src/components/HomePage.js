@@ -10,7 +10,12 @@ const HomePage = () => (
     <br />
     <div className="Aligner">
       <div className="Aligner-item">
-        <h1 className="font-actionj">Palmetto Dominion Hot Sauce 🌙</h1>
+        <h1 className="font-actionj">
+          Palmetto Dominion Hot Sauce{' '}
+          <span role="img" aria-label="Moon">
+            🌙
+          </span>
+        </h1>
       </div>
     </div>
     <div className="Aligner">

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Col } from 'antd';
 import { BarChart } from 'react-easy-chart';
 
 import '../styles/aligner.css';
@@ -17,35 +18,67 @@ import '../styles/fonts.css';
 
 const ScovilleScale = props => {
   function determineColor(level) {
-    if (level > 0) return 'orange';
+    if (level > 0 && level <= 5000) {
+      return 'green';
+    } else if (level > 5000 && level <= 8000) {
+      return 'orange';
+    } else if (level > 8000) {
+      return 'red';
+    } else {
+      console.error('Scoville Value Given is negative');
+      return 'white';
+    }
   }
 
   function determinePercentage(level) {
-    return level / 100;
+    console.log(level / 32000 + '%');
+    return level / 32000;
   }
 
-  console.log(props.scovilleUnits);
+  console.log('Props--->', props);
 
   return (
     <Fragment>
-      <div style={{ backgroundColor: '#FFFFFF' }}>
-        <BarChart
-          axisLabels={{ y: 'My y Axis' }}
-          axes
-          colorBars
-          height={150}
-          width={75}
-          barWidth={20}
-          xDomainRange={[1, 100]}
-          yDomainRange={[1, 100]}
-          data={[
-            {
-              x: 0,
-              y: determinePercentage(props.scovilleUnits),
-              color: determineColor(props.scovilleUnits),
-            },
-          ]}
-        />
+      <div style={{ height: '100px' }}>
+        <Col span={12}>
+          <div style={{ backgroundColor: '#fff' }}>
+            <BarChart
+              axisLabels={{ y: 'My y Axis' }}
+              axes
+              colorBars
+              height={150}
+              width={75}
+              barWidth={20}
+              xDomainRange={[1, 100]}
+              yDomainRange={[1, 100]}
+              data={[
+                {
+                  x: 0,
+                  y: determinePercentage(props.maxScovilleUnits),
+                  color: determineColor(
+                    (props.maxScovilleUnits - props.minScovilleUnits) / 2,
+                  ),
+                },
+                {
+                  x: 0,
+                  y: determinePercentage(props.minScovilleUnits),
+                  color: 'white',
+                },
+              ]}
+            />
+          </div>
+        </Col>
+
+        <Col
+          style={{
+            height: '100px',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+          span={12}
+        >
+          {props.minScovilleUnits} to {props.maxScovilleUnits}
+        </Col>
       </div>
     </Fragment>
   );

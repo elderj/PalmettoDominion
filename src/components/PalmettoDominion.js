@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import { Col, Layout, Menu, Row } from 'antd';
+import { Col, Layout, Menu } from 'antd';
 import { css } from 'emotion';
 
 import HomePage from './HomePage';
@@ -65,7 +65,12 @@ class PalmettoDominion extends React.Component {
                   <Link to="/Recipes">Recipes</Link>
                 </Menu.Item>
                 <Menu.Item key="/Glossary">
-                  <Link to="/Glossary">🌶Pepper Glossary</Link>
+                  <Link to="/Glossary">
+                    <span role="img" aria-label="Pepper">
+                      🌶
+                    </span>
+                    Pepper Glossary
+                  </Link>
                 </Menu.Item>
                 <Menu.Item key="/Contact">
                   <Link to="/Contact">Contact</Link>
@@ -91,7 +96,23 @@ class PalmettoDominion extends React.Component {
             <div>
               <div className="Aligner">
                 <div className="Aligner-item">
-                  <h2>🌶 🌶 🌶 🌶 🌶</h2>
+                  <h2>
+                    <span role="img" aria-label="Pepper">
+                      🌶
+                    </span>{' '}
+                    <span role="img" aria-label="Pepper">
+                      🌶
+                    </span>{' '}
+                    <span role="img" aria-label="Pepper">
+                      🌶
+                    </span>{' '}
+                    <span role="img" aria-label="Pepper">
+                      🌶
+                    </span>{' '}
+                    <span role="img" aria-label="Pepper">
+                      🌶
+                    </span>
+                  </h2>
                 </div>
               </div>
               <div className="Aligner">

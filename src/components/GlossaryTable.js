@@ -25,7 +25,12 @@ class GlossaryTable extends React.Component {
       title: 'Heat Level',
       dataIndex: 'scovilleUnits',
       key: 'scovilleUnits',
-       render: scovileUnits => <ScovilleScale scovilleUnits={scovileUnits} />,
+      render: scovilleUnits => (
+        <ScovilleScale
+          minScovilleUnits={scovilleUnits[0]}
+          maxScovilleUnits={scovilleUnits[1]}
+        />
+      ),
     },
   ];
 
