@@ -23,7 +23,7 @@ const navContentLeft = css`
 class PalmettoDominion extends React.Component {
   render() {
     return (
-      <BrowserRouter basename={'/PalmettoDominion'}>
+      <BrowserRouter>
         <Layout style={{ height: '100vh', backgroundColor: '#fff' }}>
           <Header
             style={{
