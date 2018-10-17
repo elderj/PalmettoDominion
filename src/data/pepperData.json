@@ -23,6 +23,12 @@
       "name": "Carolina Reaper",
       "scientificName": "Capsicum annuum",
       "scovilleUnits": [1400000, 2200000]
+    },
+    {
+      "key": "5",
+      "name": "Serrano Pepper",
+      "scientificName": "Capsicum annuum",
+      "scovilleUnits": [1400000, 2200000]
     }
   ]
 }

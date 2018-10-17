@@ -7,6 +7,7 @@
     "antd": "^3.9.2",
     "emotion": "^9.2.10",
     "gh-pages": "^2.0.0",
+    "mdxc": "^1.1.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-easy-chart": "^1.0.0",
@@ -22,6 +23,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "json-loader": "^0.5.7"
+    "json-loader": "^0.5.7",
+    "mdx-loader": "^1.1.1"
   }
 }
