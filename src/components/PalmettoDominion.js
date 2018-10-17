@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import { Col, Layout, Menu } from 'antd';
+import { Col, Icon, Layout, Menu } from 'antd';
 import { css } from 'emotion';
 
 import HomePage from './HomePage';
@@ -58,22 +58,21 @@ class PalmettoDominion extends React.Component {
                 style={{ lineHeight: '64px' }}
               >
                 <Menu.Item key="1">
-                  <Link to="/">Home</Link>
+
+                  <Link to="/"><Icon type="home" theme="twoTone" twoToneColor="#37B079" />Home</Link>
                 </Menu.Item>
 
                 <Menu.Item key="2">
-                  <Link to="/Recipes">Recipes</Link>
+                  <Link to="/Recipes"><Icon type="profile" theme="twoTone" twoToneColor="#FFB350" />Recipes</Link>
                 </Menu.Item>
                 <Menu.Item key="/Glossary">
                   <Link to="/Glossary">
-                    <span role="img" aria-label="Pepper">
-                      🌶
-                    </span>
+                    <Icon type="fire" theme="twoTone" twoToneColor="#FF7F50" />
                     Pepper Glossary
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="/Contact">
-                  <Link to="/Contact">Contact</Link>
+                  <Link to="/Contact"><Icon type="phone" theme="twoTone" twoToneColor="#3A78A4" />Contact</Link>
                 </Menu.Item>
               </Menu>
             </Col>
