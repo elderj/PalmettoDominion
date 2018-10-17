@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BasicExample, } from './BasicExample' 
+import { Recipes, } from './Recipes' 
 
 
 
@@ -31,7 +31,7 @@ const RecipesPage = () => (
           padding: '8px',
         }}
       >
-        <BasicExample />
+        <Recipes />
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HelloWorld from '!babel-loader!mdx-loader!../data/recipes/simpleSerranoHotSauce.mdx';
 
-export const BasicExample = () => (
+export const Recipes = () => (
     <Router>
         <div>
             <Route path="/Recipes" component={RecipeList} />
