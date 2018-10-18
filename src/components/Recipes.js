@@ -1,7 +1,10 @@
 /* eslint-disable import/no-webpack-loader-syntax */
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import HelloWorld from '!babel-loader!mdx-loader!../data/recipes/simpleSerranoHotSauce.mdx';
+import React, {Fragment} from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {Divider} from 'antd'
+import BasicJalepenoHotSauce from '!babel-loader!mdx-loader!../data/recipes/basicJalepenoHotSauce.mdx';
+import SimpleSerranoHotSauce from '!babel-loader!mdx-loader!../data/recipes/simpleSerranoHotSauce.mdx';
+
 
 export const Recipes = () => (
     <Router>
@@ -16,10 +19,10 @@ export const RecipeList = ({ match }) => (
 
         <ul>
             <li>
-                <Link to={`${match.url}/simpleSerranoHotSauce`}>Simple Serrano Hot Sauce</Link>
+                <Link to={`${match.url}/basicJalepenoHotSauce`}>Basic Jalepeno Hot Sauce</Link>
             </li>
             <li>
-                <Link to={`${match.url}/components`}>Components</Link>
+                <Link to={`${match.url}/simpleSerranoHotSauce`}>Simple Serrano Hot Sauce</Link>
             </li>
         </ul>
 
@@ -27,13 +30,22 @@ export const RecipeList = ({ match }) => (
         <Route
             exact
             path={match.path}
-            render={() => <h3>Please select a topic.</h3>}
+            render={() => 
+            <Fragment/>
+        }
         />
     </div>
 );
 
 const Topic = ({ match }) => (
     <div>
-        <h3>{match.params.topicId === 'simpleSerranoHotSauce' ? (<HelloWorld/>) : (<p>Not it </p>)}</h3>
+        {/* match.params.topicId */}
+        <Switch>
+            <Route path="/Recipes/basicJalepenoHotSauce" component={BasicJalepenoHotSauce} />
+            <Route exact path="/Recipes/simpleSerranoHotSauce" component={SimpleSerranoHotSauce} />
+        </Switch>
+
+
+
     </div>
 );
