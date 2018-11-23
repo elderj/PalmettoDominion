@@ -1,42 +1,45 @@
-import React, { Fragment } from 'react';
-import { Recipes, } from './Recipes' 
-
-
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { RecipeList } from "./Recipes";
 
 const RecipesPage = () => (
   <Fragment>
-  <br />
-  <div className="Aligner">
-    <div className="Aligner-item">
-      <h1 className="font-actionj">Recipes</h1>
-    </div>
     <br />
-  </div>
+    <div className="Aligner">
+      <div className="Aligner-item">
+        <h1 className="font-actionj">Recipes</h1>
+      </div>
+      <br />
+    </div>
 
-  <div className="Aligner">
-    <div
-      className="Aligner-item"
-      style={{
-        backgroundColor: '#F0F0F0',
-        width: '400vw',
-        borderRadius: '25px',
-        padding: '8px',
-      }}
-    >
+    <div className="Aligner">
       <div
+        className="Aligner-item"
         style={{
-          backgroundColor: '#fff',
-
-          borderRadius: '20px',
-          padding: '8px',
+          backgroundColor: "#F0F0F0",
+          width: "400vw",
+          borderRadius: "25px",
+          padding: "8px"
         }}
       >
-        <Recipes />
+        <div
+          style={{
+            backgroundColor: "#fff",
+
+            borderRadius: "20px",
+            padding: "8px"
+          }}
+        >
+          <Router>
+            <div>
+              <Route path="/Recipes" component={RecipeList} />
+            </div>
+          </Router>
+        </div>
       </div>
     </div>
-  </div>
-  <br />
-</Fragment>
+    <br />
+  </Fragment>
 );
 
 export default RecipesPage;
