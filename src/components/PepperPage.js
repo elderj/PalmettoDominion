@@ -1,14 +1,13 @@
 import React, { Fragment } from "react";
-import { Divider } from "antd";
-import "../styles/aligner.css";
-import "../styles/fonts.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import GlossaryTable from "./GlossaryTable";
 
-const GlossaryPage = () => (
+const PepperPage = () => (
   <Fragment>
     <br />
     <div className="Aligner">
       <div className="Aligner-item">
-        <h1 className="font-actionj">Glossary</h1>
+        <h1 className="font-actionj">Peppers</h1>
       </div>
       <br />
     </div>
@@ -31,8 +30,11 @@ const GlossaryPage = () => (
             padding: "8px"
           }}
         >
-          <h2>Terminology:</h2>
-          <Divider />
+          <Router>
+            <div>
+              <Route path="/Peppers" component={GlossaryTable} />
+            </div>
+          </Router>
         </div>
       </div>
     </div>
@@ -40,4 +42,4 @@ const GlossaryPage = () => (
   </Fragment>
 );
 
-export default GlossaryPage;
+export default PepperPage;

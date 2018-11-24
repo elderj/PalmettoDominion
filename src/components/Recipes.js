@@ -1,7 +1,6 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import React, { Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Divider } from "antd";
+import { BrowserRouter as Switch, Route, Link } from "react-router-dom";
 import BasicJalepenoHotSauce from "!babel-loader!mdx-loader!../data/recipes/basicJalepenoHotSauce.mdx";
 import SimpleSerranoHotSauce from "!babel-loader!mdx-loader!../data/recipes/simpleSerranoHotSauce.mdx";
 
