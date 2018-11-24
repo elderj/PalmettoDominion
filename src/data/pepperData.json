@@ -4,31 +4,37 @@
       "key": "1",
       "name": "Jalapeño",
       "scientificName": "Capsicum annuum",
-      "scovilleUnits": [100000, 350000]
+      "scovilleUnits": [100000, 350000],
+      "description": "Jalapeño peppers are one of the most common types of hot peppers.",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Jalape%C3%B1o.png"
     },
     {
       "key": "2",
       "name": "Habanero",
       "scientificName": "Capsicum chinense",
-      "scovilleUnits": [100000, 350000]
+      "scovilleUnits": [100000, 350000],
+      "description": ""
     },
     {
       "key": "3",
       "name": "Banana Pepper",
       "scientificName": "Capsicum annuum",
-      "scovilleUnits": [100000, 350000]
+      "scovilleUnits": [100000, 350000],
+      "description": ""
     },
     {
       "key": "4",
       "name": "Carolina Reaper",
       "scientificName": "Capsicum annuum",
-      "scovilleUnits": [1400000, 2200000]
+      "scovilleUnits": [1400000, 2200000],
+      "description": ""
     },
     {
       "key": "5",
       "name": "Serrano Pepper",
       "scientificName": "Capsicum annuum",
-      "scovilleUnits": [1400000, 2200000]
+      "scovilleUnits": [1400000, 2200000],
+      "description": ""
     }
   ]
 }

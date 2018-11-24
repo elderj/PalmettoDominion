@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import GlossaryTable from "./GlossaryTable";
+import PepperTable from "./PepperTable";
 
 const PepperPage = () => (
   <Fragment>
@@ -25,14 +25,13 @@ const PepperPage = () => (
         <div
           style={{
             backgroundColor: "#fff",
-
             borderRadius: "20px",
             padding: "8px"
           }}
         >
           <Router>
             <div>
-              <Route path="/Peppers" component={GlossaryTable} />
+              <Route path="/Peppers" component={PepperTable} />
             </div>
           </Router>
         </div>

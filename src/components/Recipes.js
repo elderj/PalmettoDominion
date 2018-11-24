@@ -1,6 +1,6 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import React, { Fragment } from "react";
-import { BrowserRouter as Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import BasicJalepenoHotSauce from "!babel-loader!mdx-loader!../data/recipes/basicJalepenoHotSauce.mdx";
 import SimpleSerranoHotSauce from "!babel-loader!mdx-loader!../data/recipes/simpleSerranoHotSauce.mdx";
 
@@ -18,15 +18,14 @@ export const RecipeList = ({ match }) => (
         </Link>
       </li>
     </ul>
-
-    <Route path={`${match.path}/:recipeId`} component={Recipe} />
-    <Route exact path={match.path} render={() => <Fragment />} />
+    <div>
+      <Route path={`${match.path}/:recipeId`} component={Recipe} />
+    </div>
   </div>
 );
 
 const Recipe = ({ match }) => (
-  <div>
-    {/* match.params.recipeId */}
+  <Fragment>
     <Switch>
       <Route
         path="/Recipes/basicJalepenoHotSauce"
@@ -38,5 +37,5 @@ const Recipe = ({ match }) => (
         component={SimpleSerranoHotSauce}
       />
     </Switch>
-  </div>
+  </Fragment>
 );

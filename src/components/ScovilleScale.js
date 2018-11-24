@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import { Col } from 'antd';
-import { BarChart } from 'react-easy-chart';
+import React, { Fragment } from "react";
+import { Col } from "antd";
+import { BarChart } from "react-easy-chart";
 
-import '../styles/aligner.css';
-import '../styles/fonts.css';
+import "../styles/aligner.css";
+import "../styles/fonts.css";
 
 //For Reference
 //
@@ -19,31 +19,29 @@ import '../styles/fonts.css';
 const ScovilleScale = props => {
   function determineColor(level) {
     if (level > 0 && level <= 5000) {
-      return 'green';
+      return "green";
     } else if (level > 5000 && level <= 8000) {
-      return 'orange';
+      return "orange";
     } else if (level > 8000) {
-      return 'red';
+      return "red";
     } else {
-      console.error('Scoville Value Given is negative');
-      return 'white';
+      console.error("Scoville Value Given is negative");
+      return "white";
     }
   }
 
   function determinePercentage(level) {
-    console.log(level / 32000 + '%');
+    // /console.log(level / 32000 + "%");
     return level / 32000;
   }
 
-  console.log('Props--->', props);
-
   return (
     <Fragment>
-      <div style={{ height: '100px' }}>
+      <div style={{ height: "100px" }}>
         <Col span={12}>
-          <div style={{ backgroundColor: '#fff' }}>
+          <div style={{ backgroundColor: "#fff" }}>
             <BarChart
-              axisLabels={{ y: 'My y Axis' }}
+              axisLabels={{ y: "My y Axis" }}
               axes
               colorBars
               height={150}
@@ -56,14 +54,14 @@ const ScovilleScale = props => {
                   x: 0,
                   y: determinePercentage(props.maxScovilleUnits),
                   color: determineColor(
-                    (props.maxScovilleUnits - props.minScovilleUnits) / 2,
-                  ),
+                    (props.maxScovilleUnits - props.minScovilleUnits) / 2
+                  )
                 },
                 {
                   x: 0,
                   y: determinePercentage(props.minScovilleUnits),
-                  color: 'white',
-                },
+                  color: "white"
+                }
               ]}
             />
           </div>
@@ -71,9 +69,9 @@ const ScovilleScale = props => {
 
         <Col
           style={{
-            height: '100px',
-            display: 'flex',
-            alignItems: 'center',
+            height: "100px",
+            display: "flex",
+            alignItems: "center"
           }}
           span={12}
         >
