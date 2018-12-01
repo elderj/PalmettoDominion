@@ -18,6 +18,7 @@ const PepperPage = () => (
         style={{
           backgroundColor: "#F0F0F0",
           width: "400vw",
+          minWidth: "650px",
           borderRadius: "25px",
           padding: "8px"
         }}

@@ -2,6 +2,7 @@
 import React, { Fragment } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import BasicJalepenoHotSauce from "!babel-loader!mdx-loader!../data/recipes/basicJalepenoHotSauce.mdx";
+import LouisianaHotSauce from "!babel-loader!mdx-loader!../data/recipes/louisianaHotSauce.mdx";
 import SimpleSerranoHotSauce from "!babel-loader!mdx-loader!../data/recipes/simpleSerranoHotSauce.mdx";
 
 export const RecipeList = ({ match }) => (
@@ -11,6 +12,9 @@ export const RecipeList = ({ match }) => (
         <Link to={`${match.url}/basicJalepenoHotSauce`}>
           Basic Jalepeno Hot Sauce
         </Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/louisianaHotSauce`}>Louisana Hot Sauce</Link>
       </li>
       <li>
         <Link to={`${match.url}/simpleSerranoHotSauce`}>
@@ -30,6 +34,11 @@ const Recipe = ({ match }) => (
       <Route
         path="/Recipes/basicJalepenoHotSauce"
         component={BasicJalepenoHotSauce}
+      />
+      <Route
+        exact
+        path="/Recipes/louisianaHotSauce"
+        component={LouisianaHotSauce}
       />
       <Route
         exact

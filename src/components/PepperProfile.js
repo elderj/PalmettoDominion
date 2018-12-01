@@ -13,9 +13,15 @@ export const PepperProfile = props => (
         src={props.pepperSelectedForModal.imageURL}
       />
     </div>
-
     <div />
     <Divider />
+
+    <p>
+      <b>{"Heat Range: "}</b>
+      {props.pepperSelectedForModal.scovilleLow}
+      {" to "}
+      {props.pepperSelectedForModal.scovilleHigh}
+    </p>
     <p>{props.pepperSelectedForModal.description}</p>
   </Fragment>
 );

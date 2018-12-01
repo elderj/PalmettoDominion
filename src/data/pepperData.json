@@ -4,7 +4,9 @@
       "key": "1",
       "name": "Jalapeño",
       "scientificName": "Capsicum annuum",
-      "scovilleUnits": [100000, 350000],
+      "scovilleUnits": [2500, 5000],
+      "scovilleHigh": 5000,
+      "scovilleLow": 2500,
       "description": "Jalapeño peppers are one of the most common types of hot peppers.",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Jalape%C3%B1o.png"
     },
@@ -12,29 +14,39 @@
       "key": "2",
       "name": "Habanero",
       "scientificName": "Capsicum chinense",
+      "scovilleHigh": 350000,
+      "scovilleLow": 100000,
       "scovilleUnits": [100000, 350000],
-      "description": ""
+      "description": "Habaneros are usually orange",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/8/86/Habanero_closeup_edit2.jpg"
     },
     {
       "key": "3",
       "name": "Banana Pepper",
       "scientificName": "Capsicum annuum",
+      "scovilleHigh": 350000,
+      "scovilleLow": 100000,
       "scovilleUnits": [100000, 350000],
-      "description": ""
+      "description": "Banana Peppers are usually yellow"
     },
     {
       "key": "4",
       "name": "Carolina Reaper",
       "scientificName": "Capsicum annuum",
+      "scovilleHigh": 350000,
+      "scovilleLow": 100000,
       "scovilleUnits": [1400000, 2200000],
-      "description": ""
+      "description": "Very hot",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/1/18/Carolina_Reaper_Pepper.png"
     },
     {
       "key": "5",
       "name": "Serrano Pepper",
       "scientificName": "Capsicum annuum",
+      "scovilleHigh": 350000,
+      "scovilleLow": 100000,
       "scovilleUnits": [1400000, 2200000],
-      "description": ""
+      "description": "Still Pretty Hot"
     }
   ]
 }

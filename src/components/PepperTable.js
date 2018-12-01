@@ -1,33 +1,36 @@
 import React, { Fragment } from "react";
-import { Button, Divider, Modal, Table } from "antd";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { withRouter } from "react-router";
+import { Button, Modal, Table } from "antd";
 
 // lazy way of loading data until I build out a backend
 import data from "../data/pepperData";
 import ScovilleScale from "./ScovilleScale";
 import { PepperProfile } from "./PepperProfile";
+import { PepperComparison } from "./PepperComparison";
 
-let selectedPepperRows = [];
-
-// function compare() {
-//   console.log(selectedPepperRows);
-// }
-
-// const rowSelection = {
-//   onChange: (selectedRowKeys, selectedRows) => {
-//     selectedPepperRows = selectedRows;
-
-//     console.log(
-//       `selectedRowKeys: ${selectedRowKeys}`,
-//       "selectedRows: ",
-//       selectedRows
-//     );
-//   }
-// };
+// let selectedPepperRows = [];
 
 class PepperTable extends React.Component {
   state = { visible: false };
 
+  rowSelection = {
+    onChange: (selectedRowKeys, selectedRows) => {
+      // selectedPepperRows = selectedRows;
+
+      this.setState({ rowsToBeCompared: selectedRows });
+    }
+  };
+
+  compare() {
+    this.setState({
+      pepperSelectedForModal: undefined,
+      visible: true
+    });
+  }
+
   pepperRowClicked(pepper) {
+    this.props.history.push("/Peppers");
     this.setState({
       visible: true,
       pepperSelectedForModal: pepper
@@ -62,28 +65,20 @@ class PepperTable extends React.Component {
     },
 
     {
-      title: "Heat Level",
+      title: "Heat Range",
       dataIndex: "scovilleUnits",
       key: "scovilleUnits",
       render: scovilleUnits => (
-        <ScovilleScale
-          minScovilleUnits={scovilleUnits[0]}
-          maxScovilleUnits={scovilleUnits[1]}
-        />
+        <p>{scovilleUnits[0] + " to " + scovilleUnits[1]}</p>
+      )
+    },
+    {
+      title: (
+        <Link to={"/Peppers/Compare"}>
+          <Button onClick={() => this.compare()}>Compare</Button>
+        </Link>
       )
     }
-    // {
-    //   // title: <Button onClick={compare}>Compare</Button>
-    //   title: (
-    //     <Button
-    //       onClick={console.log(
-    //         "This can be used to initiate a compare between multiple types of peppers"
-    //       )}
-    //     >
-    //       Compare
-    //     </Button>
-    //   )
-    // }
   ];
 
   render() {
@@ -97,7 +92,8 @@ class PepperTable extends React.Component {
             onClick: () => this.pepperRowClicked(pepper)
           })}
           pagination={false}
-          // rowSelection={rowSelection}
+          rowSelection={this.rowSelection}
+          size="small"
         />
         <Modal
           footer={null}
@@ -105,14 +101,24 @@ class PepperTable extends React.Component {
           onCancel={this.handleCancel}
           visible={this.state.visible}
         >
-          {this.state.pepperSelectedForModal && (
+          {typeof this.state.pepperSelectedForModal !== "undefined" && (
             <PepperProfile
               pepperSelectedForModal={this.state.pepperSelectedForModal}
             />
           )}
+          <Switch>
+            <Route
+              path="/Peppers/Compare"
+              render={() => (
+                <PepperComparison
+                  selectedPepperRows={this.state.rowsToBeCompared}
+                />
+              )}
+            />
+          </Switch>
         </Modal>
       </Fragment>
     );
   }
 }
-export default PepperTable;
+export default withRouter(PepperTable);

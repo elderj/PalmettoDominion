@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import { Col, Icon, Layout, Menu } from "antd";
 import { css } from "emotion";
 
@@ -106,7 +106,7 @@ class PalmettoDominion extends React.Component {
                 height: "100"
               }}
             >
-              <Switch>
+              <Switch path="/">
                 <Route exact path="/" component={HomePage} />
                 <Route path="/Peppers" component={PepperPage} />
                 <Route path="/Recipes" component={RecipesPage} />
