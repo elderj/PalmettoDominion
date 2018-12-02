@@ -9,16 +9,14 @@ import data from "../data/pepperData";
 import { PepperProfile } from "./PepperProfile";
 import { PepperComparison } from "./PepperComparison";
 
-// let selectedPepperRows = [];
-
 class PepperTable extends React.Component {
   state = { visible: false };
 
   rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
-      // selectedPepperRows = selectedRows;
-
-      this.setState({ rowsToBeCompared: selectedRows });
+      this.setState({
+        rowsToBeCompared: selectedRows
+      });
     }
   };
 
@@ -38,14 +36,12 @@ class PepperTable extends React.Component {
   }
 
   handleOk = e => {
-    console.log(e);
     this.setState({
       visible: false
     });
   };
 
   handleCancel = e => {
-    console.log(e);
     this.setState({
       visible: false,
       pepperSelectedForModal: {}
@@ -99,6 +95,7 @@ class PepperTable extends React.Component {
           footer={null}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
+          width={800}
           visible={this.state.visible}
         >
           {typeof this.state.pepperSelectedForModal !== "undefined" && (

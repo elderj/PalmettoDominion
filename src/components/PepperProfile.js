@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Divider } from "antd";
+import ScovilleScale from "./ScovilleScale";
 
 export const PepperProfile = props => (
   <Fragment>
@@ -20,13 +21,18 @@ export const PepperProfile = props => (
     </div>
     <div />
     <Divider />
-
     <p>
       <b>{"Heat Range: "}</b>
       {props.pepperSelectedForModal.scovilleLow}
       {" to "}
       {props.pepperSelectedForModal.scovilleHigh}
     </p>
+    {props.pepperSelectedForModal.scovilleHigh && (
+      <ScovilleScale
+        minScovilleUnits={props.pepperSelectedForModal.scovilleLow}
+        maxScovilleUnits={props.pepperSelectedForModal.scovilleHigh}
+      />
+    )}
     <p>{props.pepperSelectedForModal.description}</p>
   </Fragment>
 );

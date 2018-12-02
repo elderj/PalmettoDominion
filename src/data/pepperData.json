@@ -4,9 +4,9 @@
       "key": "1",
       "name": "Jalapeño",
       "scientificName": "Capsicum annuum",
-      "scovilleUnits": [2500, 5000],
       "scovilleHigh": 5000,
       "scovilleLow": 2500,
+      "scovilleUnits": [2500, 5000],
       "description": "Jalapeño peppers are one of the most common types of hot peppers.",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Jalape%C3%B1o.png"
     },
@@ -22,31 +22,40 @@
     },
     {
       "key": "3",
-      "name": "Banana Pepper",
+      "name": "Sweet Banana Pepper",
       "scientificName": "Capsicum annuum",
-      "scovilleHigh": 350000,
-      "scovilleLow": 100000,
-      "scovilleUnits": [100000, 350000],
-      "description": "Banana Peppers are usually yellow"
+      "scovilleHigh": 500,
+      "scovilleLow": 0,
+      "scovilleUnits": [0, 500],
+      "description": "Sweet Banana Peppers are a variety of the Hungarian Wax pepper. They generally harvested when yellow or light green, but if grown to maturity will become red."
     },
     {
       "key": "4",
-      "name": "Carolina Reaper",
+      "name": "Hot Banana Pepper",
       "scientificName": "Capsicum annuum",
-      "scovilleHigh": 350000,
-      "scovilleLow": 100000,
-      "scovilleUnits": [1400000, 2200000],
-      "description": "Very hot",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/1/18/Carolina_Reaper_Pepper.png"
+      "scovilleHigh": 10000,
+      "scovilleLow": 5000,
+      "scovilleUnits": [5000, 10000],
+      "description": "Hot Banana Peppers are a variety of the Hungarian Wax pepper. They generally harvested when yellow or light green, but if grown to maturity will become red."
     },
     {
       "key": "5",
+      "name": "Carolina Reaper",
+      "scientificName": "Capsicum annuum",
+      "scovilleHigh": 2200000,
+      "scovilleLow": 1400000,
+      "scovilleUnits": [1400000, 2200000],
+      "description": "One of the world's hottest peppers on the Scoville Scale",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/1/18/Carolina_Reaper_Pepper.png"
+    },
+    {
+      "key": "6",
       "name": "Serrano Pepper",
       "scientificName": "Capsicum annuum",
-      "scovilleHigh": 350000,
-      "scovilleLow": 100000,
-      "scovilleUnits": [1400000, 2200000],
-      "description": "Still Pretty Hot"
+      "scovilleHigh": 23000,
+      "scovilleLow": 10000,
+      "scovilleUnits": [10000, 23000],
+      "description": "A common variety of pepper which is generally considered to be twice as hot as a Jalepeno pepper."
     }
   ]
 }
