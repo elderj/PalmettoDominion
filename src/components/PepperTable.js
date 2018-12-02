@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { Button, Modal, Table } from "antd";
 
 // lazy way of loading data until I build out a backend
 import data from "../data/pepperData";
-import ScovilleScale from "./ScovilleScale";
+
 import { PepperProfile } from "./PepperProfile";
 import { PepperComparison } from "./PepperComparison";
 

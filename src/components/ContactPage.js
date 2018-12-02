@@ -49,7 +49,7 @@ class ContactPage extends React.Component {
                   <Input addonBefore="  Subject " placeholder="Subject" />
                 </Form.Item>
                 <Form.Item>
-                  <Input.TextArea addonBefore="Message" placeholder="Message" />
+                  <Input.TextArea placeholder="Message" />
                 </Form.Item>
                 <Button>Submit</Button>
               </Form>

@@ -9,6 +9,11 @@ export const PepperProfile = props => (
     </h4>
     <div className="Aligner">
       <img
+        alt={
+          props.pepperSelectedForModal.name +
+          " " +
+          props.pepperSelectedForModal.scientificName
+        }
         style={{ minWidth: "100px", maxWidth: "100px" }}
         src={props.pepperSelectedForModal.imageURL}
       />
