@@ -89,12 +89,12 @@ class PalmettoDominion extends React.Component {
                     Glossary
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="5">
+                {/* <Menu.Item key="5">
                   <Link to="/Contact">
                     <Icon type="phone" theme="twoTone" twoToneColor="#3A78A4" />
                     Contact
                   </Link>
-                </Menu.Item>
+                </Menu.Item> */}
               </Menu>
             </Col>
           </Header>
