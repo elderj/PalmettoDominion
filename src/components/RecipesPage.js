@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { RecipeList } from "./Recipes";
+import { Recipes } from "./Recipes";
 
 const RecipesPage = () => (
   <Fragment>
@@ -33,7 +33,7 @@ const RecipesPage = () => (
           <Router>
             <div>
               <h2>Hot Sauces:</h2>
-              <Route path="/Recipes" component={RecipeList} />
+              <Route path="/Recipes" component={Recipes} />
             </div>
           </Router>
         </div>

@@ -1,49 +1,66 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import React, { Fragment } from "react";
+import { Link, Route } from "react-router-dom";
 // import { Switch, Route, Link } from "react-router-dom";
-import { Route } from "react-router-dom";
-// import BasicJalepenoHotSauce from "!babel-loader!mdx-loader!../data/recipes/basicJalepenoHotSauce.mdx";
-// import LouisianaHotSauce from "!babel-loader!mdx-loader!../data/recipes/louisianaHotSauce.mdx";
-// import SimpleSerranoHotSauce from "!babel-loader!mdx-loader!../data/recipes/simpleSerranoHotSauce.mdx";
+import { Menu, Icon } from "antd";
+import { Recipe } from "./Recipe";
+import recipesData from "../data/recipes";
 
-export const RecipeList = ({ match }) => (
-  <div>
-    {/* <ul>
-      <li>
-        <Link to={`${match.url}/basicJalepenoHotSauce`}>
-          Basic Jalepeno Hot Sauce
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/louisianaHotSauce`}>Louisana Hot Sauce</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/simpleSerranoHotSauce`}>
-          Simple Serrano Hot Sauce
-        </Link>
-      </li>
-    </ul> */}
-    <div>
-      <Route path={`${match.path}/:recipeId`} component={Recipe} />
-    </div>
-  </div>
-);
+const SubMenu = Menu.SubMenu;
 
-const Recipe = ({ match }) => (
+var selectedRecipe = "default";
+
+function test(r) {
+  selectedRecipe = r.recipe;
+}
+export const Recipes = ({ match }) => (
   <Fragment>
-    <h4>Hot Sauce Recipes</h4>
-    {/* <Switch>
-      <Route path="/Recipes/basicJalepenoHotSauce" component={ScovilleScale} />
-      <Route
-        exact
-        path="/Recipes/louisianaHotSauce"
-        component={LouisianaHotSauce}
-      />
-      <Route
-        exact
-        path="/Recipes/simpleSerranoHotSauce"
-        component={SimpleSerranoHotSauce}
-      />
-    </Switch> */}
+    <div>
+      <div style={{ display: "flex" }}>
+        <div
+          style={{
+            width: "250px"
+          }}
+        >
+          <Menu
+            theme={"light"}
+            // onClick={this.handleClick}
+            style={{ width: 250 }}
+            defaultOpenKeys={["sub1"]}
+            // selectedKeys={[this.state.current]}
+            mode="inline"
+          >
+            <SubMenu
+              key="sauces"
+              title={
+                <span>
+                  <Icon type="fire" />
+                  <span>Sauces</span>
+                </span>
+              }
+            >
+              {recipesData.recipes.map((recipe, index) => {
+                return (
+                  <Menu.Item>
+                    <Link
+                      onClick={() => test({ recipe })}
+                      to={`${match.url}/${recipe.ccName}`}
+                    >
+                      {recipe.name}
+                    </Link>
+                  </Menu.Item>
+                );
+              })}
+            </SubMenu>
+          </Menu>
+        </div>
+        <div style={{ flex: "1", padding: "20px" }}>
+          <Route
+            path={`${match.path}/${selectedRecipe.ccName}`}
+            render={() => <Recipe selectedRecipe={selectedRecipe} />}
+          />
+        </div>
+      </div>
+    </div>
   </Fragment>
 );
