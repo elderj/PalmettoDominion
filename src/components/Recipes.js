@@ -41,7 +41,7 @@ export const Recipes = ({ match }) => (
             >
               {recipesData.recipes.map((recipe, index) => {
                 return (
-                  <Menu.Item>
+                  <Menu.Item key={index}>
                     <Link
                       onClick={() => test({ recipe })}
                       to={`${match.url}/${recipe.ccName}`}

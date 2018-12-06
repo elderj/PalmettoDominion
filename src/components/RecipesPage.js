@@ -32,7 +32,6 @@ const RecipesPage = () => (
         >
           <Router>
             <div>
-              <h2>Hot Sauces:</h2>
               <Route path="/Recipes" component={Recipes} />
             </div>
           </Router>
