@@ -38,7 +38,7 @@ export const PepperComparison = props => {
     };
   });
 
-  props.selectedPepperRows.forEach(pepper => console.log(pepper));
+  // props.selectedPepperRows.forEach(pepper => console.log(pepper));
 
   return (
     <Fragment>
@@ -49,55 +49,58 @@ export const PepperComparison = props => {
       {props.selectedPepperRows && (
         <div>
           <table>
-            <tr>
-              <td>
-                <BarChart
-                  axes
-                  data={data}
-                  mouseOverHandler={mouseOverHandler}
-                />
-              </td>
-              <td>
-                <div
-                  style={{
-                    border: "1px solid black",
-                    paddingTop: "8px",
-                    width: "175px"
-                  }}
-                >
-                  {props.selectedPepperRows.map((pepper, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className="Aligner"
-                        style={{
-                          height: "20px"
-                        }}
-                      >
-                        <p>{pepper.name} </p>
+            <tbody>
+              <tr>
+                <td>
+                  <BarChart
+                    axes
+                    data={data}
+                    mouseOverHandler={mouseOverHandler}
+                  />
+                </td>
+                <td>
+                  <div
+                    className="TableLegend"
+                    style={{
+                      border: "1px solid black",
+
+                      paddingTop: "12px",
+                      width: "175px"
+                    }}
+                  >
+                    {props.selectedPepperRows.map((pepper, index) => {
+                      return (
                         <div
+                          key={index}
+                          className="Aligner"
                           style={{
-                            backgroundColor: `rgb(${colors[index][0]}, ${
-                              colors[index][1]
-                            }, 15)`,
-                            border: "1px solid black",
-                            height: "10px",
-                            marginBottom: "10px",
-                            marginLeft: "5px",
-                            width: "10px"
+                            height: "20px"
                           }}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              </td>
-            </tr>
+                        >
+                          <p>{pepper.name} </p>
+                          <div
+                            style={{
+                              backgroundColor: `rgb(${colors[index][0]}, ${
+                                colors[index][1]
+                              }, 15)`,
+                              border: "1px solid black",
+                              height: "10px",
+                              marginBottom: "10px",
+                              marginLeft: "5px",
+                              width: "10px"
+                            }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       )}
       <Divider />
-      {/* Additional Comparisons */}
     </Fragment>
   );
 };

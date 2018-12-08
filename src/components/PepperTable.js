@@ -8,7 +8,6 @@ import data from "../data/pepperData";
 
 import { PepperProfile } from "./PepperProfile";
 import { PepperComparison } from "./PepperComparison";
-
 class PepperTable extends React.Component {
   state = { visible: false };
 
@@ -22,8 +21,9 @@ class PepperTable extends React.Component {
 
   compare() {
     this.setState({
-      pepperSelectedForModal: undefined,
-      visible: true
+      individualPepper: undefined,
+      visible: true,
+      width: 800
     });
   }
 
@@ -31,7 +31,8 @@ class PepperTable extends React.Component {
     this.props.history.push("/Peppers");
     this.setState({
       visible: true,
-      pepperSelectedForModal: pepper
+      individualPepper: pepper,
+      width: 400
     });
   }
 
@@ -44,7 +45,7 @@ class PepperTable extends React.Component {
   handleCancel = e => {
     this.setState({
       visible: false,
-      pepperSelectedForModal: {}
+      individualPepper: {}
     });
   };
   columns = [
@@ -59,7 +60,12 @@ class PepperTable extends React.Component {
       key: "scientificName",
       render: scientificName => <i>{scientificName}</i>
     },
-
+    {
+      title: "Tags",
+      dataIndex: "tags",
+      key: "tags",
+      render: tags => <p>tags</p>
+    },
     {
       title: "Heat Range",
       dataIndex: "scovilleUnits",
@@ -81,7 +87,7 @@ class PepperTable extends React.Component {
     return (
       <Fragment>
         <Table
-          dataSource={data.dataSource}
+          dataSource={data.pepperInfo}
           columns={this.columns}
           onRow={(pepper, index) => ({
             index,
@@ -95,13 +101,11 @@ class PepperTable extends React.Component {
           footer={null}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          width={800}
+          width={this.state.width}
           visible={this.state.visible}
         >
-          {typeof this.state.pepperSelectedForModal !== "undefined" && (
-            <PepperProfile
-              pepperSelectedForModal={this.state.pepperSelectedForModal}
-            />
+          {typeof this.state.individualPepper !== "undefined" && (
+            <PepperProfile individualPepper={this.state.individualPepper} />
           )}
           <Switch>
             <Route

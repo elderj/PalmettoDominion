@@ -6,8 +6,6 @@ import { css } from "emotion";
 import HomePage from "./HomePage";
 import PepperPage from "./PepperPage";
 import RecipesPage from "./RecipesPage";
-import GlossaryPage from "./GlossaryPage";
-import ContactPage from "./ContactPage";
 
 import logo from "../images/logo.png";
 
@@ -79,7 +77,7 @@ class PalmettoDominion extends React.Component {
                     Recipes
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="4">
+                {/* <Menu.Item key="4">
                   <Link to="/Glossary">
                     <Icon
                       type="profile"
@@ -88,7 +86,7 @@ class PalmettoDominion extends React.Component {
                     />
                     Glossary
                   </Link>
-                </Menu.Item>
+                </Menu.Item> */}
                 {/* <Menu.Item key="5">
                   <Link to="/Contact">
                     <Icon type="phone" theme="twoTone" twoToneColor="#3A78A4" />
@@ -110,8 +108,8 @@ class PalmettoDominion extends React.Component {
                 <Route exact path="/" component={HomePage} />
                 <Route path="/Peppers" component={PepperPage} />
                 <Route path="/Recipes" component={RecipesPage} />
-                <Route path="/Glossary" component={GlossaryPage} />
-                <Route path="/Contact" component={ContactPage} />
+                {/* <Route path="/Glossary" component={GlossaryPage} /> */}
+                {/* <Route path="/Contact" component={ContactPage} /> */}
               </Switch>
             </div>
             <div>
