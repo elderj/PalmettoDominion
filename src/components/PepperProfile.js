@@ -4,35 +4,35 @@ import ScovilleScale from "./ScovilleScale";
 
 export const PepperProfile = props => (
   <Fragment>
-    <h2>{props.pepperSelectedForModal.name}</h2>
+    <h2>{props.individualPepper.name}</h2>
     <h4 style={{ fontStyle: "italic" }}>
-      {props.pepperSelectedForModal.scientificName}
+      {props.individualPepper.scientificName}
     </h4>
     <div className="Aligner">
       <img
         alt={
-          props.pepperSelectedForModal.name +
+          props.individualPepper.name +
           " " +
-          props.pepperSelectedForModal.scientificName
+          props.individualPepper.scientificName
         }
         style={{ minWidth: "100px", maxWidth: "100px" }}
-        src={props.pepperSelectedForModal.imageURL}
+        src={props.individualPepper.imageURL}
       />
     </div>
     <div />
     <Divider />
     <p>
       <b>{"Heat Range: "}</b>
-      {props.pepperSelectedForModal.scovilleLow}
+      {props.individualPepper.scovilleLow}
       {" to "}
-      {props.pepperSelectedForModal.scovilleHigh}
+      {props.individualPepper.scovilleHigh}
     </p>
-    {props.pepperSelectedForModal.scovilleHigh && (
+    {props.individualPepper.scovilleHigh && (
       <ScovilleScale
-        minScovilleUnits={props.pepperSelectedForModal.scovilleLow}
-        maxScovilleUnits={props.pepperSelectedForModal.scovilleHigh}
+        minScovilleUnits={props.individualPepper.scovilleLow}
+        maxScovilleUnits={props.individualPepper.scovilleHigh}
       />
     )}
-    <p>{props.pepperSelectedForModal.description}</p>
+    <p>{props.individualPepper.description}</p>
   </Fragment>
 );

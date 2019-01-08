@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import { Col, Icon, Layout, Menu } from "antd";
 import { css } from "emotion";
 
@@ -21,7 +21,7 @@ const navContentLeft = css`
 class PalmettoDominion extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Layout style={{ height: "100vh", backgroundColor: "#fff" }}>
           <Header
             style={{
@@ -142,7 +142,7 @@ class PalmettoDominion extends React.Component {
             </div>
           </Content>
         </Layout>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
