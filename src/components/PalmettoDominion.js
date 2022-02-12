@@ -31,7 +31,7 @@ class PalmettoDominion extends React.Component {
               margin: 0,
               minWidth: "600px",
               padding: 0,
-              height: "66px"
+              height: "66px",
             }}
           >
             <Col className={navContentLeft} span={1}>
@@ -44,7 +44,7 @@ class PalmettoDominion extends React.Component {
                     marginTop: 12,
                     marginLeft: 16,
                     marginRight: 16,
-                    marginBottom: 12
+                    marginBottom: 12,
                   }}
                 />
               </Link>
@@ -101,7 +101,7 @@ class PalmettoDominion extends React.Component {
               style={{
                 background: "padding: 24, minHeight: 280",
                 backgroundColor: "#FF7F50",
-                height: "100"
+                height: "100",
               }}
             >
               <Switch path="/">
@@ -136,7 +136,7 @@ class PalmettoDominion extends React.Component {
               </div>
               <div className="Aligner">
                 <div className="Aligner-item">
-                  <p>© 2018 Palmetto Dominion</p>
+                  <p>© 2022 Palmetto Dominion</p>
                 </div>
               </div>
             </div>
