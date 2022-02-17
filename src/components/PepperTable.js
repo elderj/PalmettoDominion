@@ -14,16 +14,16 @@ class PepperTable extends React.Component {
   rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
       this.setState({
-        rowsToBeCompared: selectedRows
+        rowsToBeCompared: selectedRows,
       });
-    }
+    },
   };
 
   compare() {
     this.setState({
       individualPepper: undefined,
       visible: true,
-      width: 800
+      width: 800,
     });
   }
 
@@ -32,66 +32,67 @@ class PepperTable extends React.Component {
     this.setState({
       visible: true,
       individualPepper: pepper,
-      width: 400
+      width: 400,
     });
   }
 
-  handleOk = e => {
+  handleOk = (e) => {
     this.setState({
-      visible: false
+      visible: false,
     });
   };
 
-  handleCancel = e => {
+  handleCancel = (e) => {
     this.setState({
       visible: false,
-      individualPepper: {}
+      individualPepper: {},
     });
   };
   columns = [
     {
       title: "Pepper Name",
       dataIndex: "name",
-      key: "name"
+      key: "name",
     },
     {
       title: "Scientific Name",
       dataIndex: "scientificName",
       key: "scientificName",
-      render: scientificName => <i>{scientificName}</i>
+      render: (scientificName) => <i>{scientificName}</i>,
     },
     {
       title: "Tags",
       dataIndex: "tags",
       key: "tags",
-      render: tags => <p>tags</p>
+      render: (tags) => <p>tags</p>,
     },
     {
       title: "Heat Range",
       dataIndex: "scovilleUnits",
       key: "scovilleUnits",
-      render: scovilleUnits => (
+      render: (scovilleUnits) => (
         <p>{scovilleUnits[0] + " to " + scovilleUnits[1]}</p>
-      )
+      ),
     },
     {
       title: (
         <Link to={"/Peppers/Compare"}>
           <Button onClick={() => this.compare()}>Compare</Button>
         </Link>
-      )
-    }
+      ),
+    },
   ];
 
   render() {
     return (
       <Fragment>
+        <p>testing</p>
         <Table
           dataSource={data.pepperInfo}
           columns={this.columns}
           onRow={(pepper, index) => ({
             index,
-            onClick: () => this.pepperRowClicked(pepper)
+            onClick: () => this.pepperRowClicked(pepper),
           })}
           pagination={false}
           rowSelection={this.rowSelection}
