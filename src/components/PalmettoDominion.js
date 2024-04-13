@@ -11,6 +11,8 @@ import logo from "../images/logo.png";
 
 const { Header, Content } = Layout;
 
+const CurrentYear = new Date().getFullYear();
+
 //TODO: Make Styles consistent
 const navContentLeft = css`
   display: flex;
@@ -136,7 +138,7 @@ class PalmettoDominion extends React.Component {
               </div>
               <div className="Aligner">
                 <div className="Aligner-item">
-                  <p>© 2022 Palmetto Dominion</p>
+                  <p>©{CurrentYear} Elder Design Concepts LLC</p>
                 </div>
               </div>
             </div>

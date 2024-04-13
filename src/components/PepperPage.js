@@ -7,7 +7,7 @@ const PepperPage = () => (
     <br />
     <div className="Aligner">
       <div className="Aligner-item">
-        <h1 className="font-actionj">Peppers</h1>
+        <h1 className="font-actionj">Pepper Index:</h1>
       </div>
       <br />
     </div>
@@ -20,14 +20,14 @@ const PepperPage = () => (
           width: "400vw",
           minWidth: "650px",
           borderRadius: "25px",
-          padding: "8px"
+          padding: "8px",
         }}
       >
         <div
           style={{
             backgroundColor: "#fff",
             borderRadius: "20px",
-            padding: "8px"
+            padding: "8px",
           }}
         >
           <Router>
